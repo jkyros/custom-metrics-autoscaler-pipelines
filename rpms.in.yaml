@@ -2,6 +2,7 @@ reinstallPackages:
   - tzdata
 packages:
   - protobuf-compiler
+  - python3
   - python3-pip
   - python3-ruamel-yaml
   - rsync
@@ -10,7 +11,7 @@ packages:
   - jq
 contentOrigin:
   repofiles:
-    - .repos/merged.repo
+    - repos/merged.repo
 arches:
   - aarch64
   - x86_64
