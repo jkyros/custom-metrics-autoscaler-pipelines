@@ -29,7 +29,11 @@ RUN rm /manifests/keda.*.clusterserviceversion.yaml
 # the opm template renderer uses these actually and will do really weird stuff if the package doesn't match
 RUN sed -i -e 's#operators.operatorframework.io.bundle.package.v1:.*#operators.operatorframework.io.bundle.package.v1: openshift-custom-metrics-autoscaler-operator#g' metadata/annotations.yaml
 
-FROM ubi9
+# MintMaker is not smart enough to figure out which "latest" you shipped, 
+# so we need to keep the hash here and let MintMaker security update it. No, I don't like it either.
+# See: https://konflux.pages.redhat.com/docs/users/mintmaker/user.html#enable-container-image-tag-versioning
+# FROM registry.access.redhat.com/ubi9/ubi:latest
+FROM ubi9:latest@sha256:9db17fd5d0bbf8797d65d42c039f3a20ce9621d989cc173e3c616fa5e8588115
 
 # Labels for testing.
 #LABEL operators.operatorframework.io.test.mediatype.v1=scorecard+v1
