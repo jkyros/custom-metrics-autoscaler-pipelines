@@ -1,8 +1,7 @@
 # TODO(jkyros): It might be more proper to generate this with opm, e.g opm alpha bundle generate --directory ./custom-metrics-autoscaler-operator/keda/2.14.1/manifests/ \ 
 # --package openshift-custom-metrics-autoscaler-operator --channels stable --default stable
 
-FROM registry.access.redhat.com/ubi9/ubi-minimal:latest as builder-runner
-
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:e12131db2e2b6572613589a94b7f615d4ac89d94f859dad05908aeb478fb090f as builder-runner
 RUN microdnf install -y skopeo jq python3 python3-ruamel-yaml
 
 # Use a new stage to enable caching of the package installations for local development
@@ -33,7 +32,9 @@ RUN sed -i -e 's#operators.operatorframework.io.bundle.package.v1:.*#operators.o
 # so we need to keep the hash here and let MintMaker security update it. No, I don't like it either.
 # See: https://konflux.pages.redhat.com/docs/users/mintmaker/user.html#enable-container-image-tag-versioning
 # FROM registry.access.redhat.com/ubi9/ubi:latest
-FROM ubi9:latest@sha256:d07a5e080b8a9b3624d3c9cfbfada9a6baacd8e6d4065118f0e80c71ad518044
+
+# TODO(jkyros): This should probably be scratch, but then you won't have a shell to debug it
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:e12131db2e2b6572613589a94b7f615d4ac89d94f859dad05908aeb478fb090f
 
 # Labels for testing.
 #LABEL operators.operatorframework.io.test.mediatype.v1=scorecard+v1

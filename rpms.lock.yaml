@@ -81,6 +81,13 @@ arches:
     name: python3-pip
     evr: 21.3.1-1.el9
     sourcerpm: python-pip-21.3.1-1.el9.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/appstream/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.aarch64.rpm
+    repoid: rhel-9-for-aarch64-appstream-rpms
+    size: 218591
+    checksum: sha256:23ad7563cf713a87aaefedc105c32ca72843801cad1024fb91af4db826a41425
+    name: python3-ruamel-yaml
+    evr: 0.16.6-7.el9.1
+    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/appstream/os/Packages/p/python3-ruamel-yaml-clib-0.2.7-3.el9.aarch64.rpm
     repoid: rhel-9-for-aarch64-appstream-rpms
     size: 143199
@@ -158,20 +165,6 @@ arches:
     name: python3
     evr: 3.9.21-2.el9
     sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/baseos/os/Packages/p/python3-libs-3.9.21-2.el9.aarch64.rpm
-    repoid: rhel-9-for-aarch64-baseos-rpms
-    size: 8464794
-    checksum: sha256:1710080c9ccb6df1245a2b662b65086be9c13f36340fc81165944b0549c13b8a
-    name: python3-libs
-    evr: 3.9.21-2.el9
-    sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/baseos/os/Packages/p/python3-setuptools-53.0.0-13.el9.noarch.rpm
-    repoid: rhel-9-for-aarch64-baseos-rpms
-    size: 969726
-    checksum: sha256:345f2e3dfa04ccdb65b4c4c9df1900f298acc3bd78dddff66f338fb7e62ccb85
-    name: python3-setuptools
-    evr: 53.0.0-13.el9
-    sourcerpm: python-setuptools-53.0.0-13.el9.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/baseos/os/Packages/r/rsync-3.2.5-3.el9.aarch64.rpm
     repoid: rhel-9-for-aarch64-baseos-rpms
     size: 416293
@@ -200,13 +193,6 @@ arches:
     name: protobuf-compiler
     evr: 3.14.0-16.el9
     sourcerpm: protobuf-3.14.0-16.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/aarch64/codeready-builder/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.aarch64.rpm
-    repoid: codeready-builder-for-rhel-9-aarch64-rpms
-    size: 218591
-    checksum: sha256:23ad7563cf713a87aaefedc105c32ca72843801cad1024fb91af4db826a41425
-    name: python3-ruamel-yaml
-    evr: 0.16.6-7.el9.1
-    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   source: []
   module_metadata: []
 - arch: ppc64le
@@ -288,6 +274,13 @@ arches:
     name: python3-pip
     evr: 21.3.1-1.el9
     sourcerpm: python-pip-21.3.1-1.el9.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/appstream/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.ppc64le.rpm
+    repoid: rhel-9-for-ppc64le-appstream-rpms
+    size: 218599
+    checksum: sha256:b316e217ce39b7d00120bfbea87e11cb405892a4ed54659b9ffd25dca66c17ba
+    name: python3-ruamel-yaml
+    evr: 0.16.6-7.el9.1
+    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/appstream/os/Packages/p/python3-ruamel-yaml-clib-0.2.7-3.el9.ppc64le.rpm
     repoid: rhel-9-for-ppc64le-appstream-rpms
     size: 158262
@@ -365,20 +358,6 @@ arches:
     name: python3
     evr: 3.9.21-2.el9
     sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/os/Packages/p/python3-libs-3.9.21-2.el9.ppc64le.rpm
-    repoid: rhel-9-for-ppc64le-baseos-rpms
-    size: 8442408
-    checksum: sha256:c6fde8aa7a543710bb2358573dc5dbefa680e6675b90020f4b8dc2807d17eb9c
-    name: python3-libs
-    evr: 3.9.21-2.el9
-    sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/os/Packages/p/python3-setuptools-53.0.0-13.el9.noarch.rpm
-    repoid: rhel-9-for-ppc64le-baseos-rpms
-    size: 969726
-    checksum: sha256:345f2e3dfa04ccdb65b4c4c9df1900f298acc3bd78dddff66f338fb7e62ccb85
-    name: python3-setuptools
-    evr: 53.0.0-13.el9
-    sourcerpm: python-setuptools-53.0.0-13.el9.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/os/Packages/r/rsync-3.2.5-3.el9.ppc64le.rpm
     repoid: rhel-9-for-ppc64le-baseos-rpms
     size: 449938
@@ -407,13 +386,6 @@ arches:
     name: protobuf-compiler
     evr: 3.14.0-16.el9
     sourcerpm: protobuf-3.14.0-16.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/codeready-builder/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.ppc64le.rpm
-    repoid: codeready-builder-for-rhel-9-ppc64le-rpms
-    size: 218599
-    checksum: sha256:b316e217ce39b7d00120bfbea87e11cb405892a4ed54659b9ffd25dca66c17ba
-    name: python3-ruamel-yaml
-    evr: 0.16.6-7.el9.1
-    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   source: []
   module_metadata: []
 - arch: s390x
@@ -495,6 +467,13 @@ arches:
     name: python3-pip
     evr: 21.3.1-1.el9
     sourcerpm: python-pip-21.3.1-1.el9.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/appstream/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.s390x.rpm
+    repoid: rhel-9-for-s390x-appstream-rpms
+    size: 218557
+    checksum: sha256:49545f2afd36b55ddf3d6adbe206fd1f5a021180d9153bccb0f4ea0ad7106c84
+    name: python3-ruamel-yaml
+    evr: 0.16.6-7.el9.1
+    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/appstream/os/Packages/p/python3-ruamel-yaml-clib-0.2.7-3.el9.s390x.rpm
     repoid: rhel-9-for-s390x-appstream-rpms
     size: 138477
@@ -572,20 +551,6 @@ arches:
     name: python3
     evr: 3.9.21-2.el9
     sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/baseos/os/Packages/p/python3-libs-3.9.21-2.el9.s390x.rpm
-    repoid: rhel-9-for-s390x-baseos-rpms
-    size: 8309803
-    checksum: sha256:5c9ac3a50df484c8f4d820a914a6f937f28444e464e048080c3ec5ee8fa3ed68
-    name: python3-libs
-    evr: 3.9.21-2.el9
-    sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/baseos/os/Packages/p/python3-setuptools-53.0.0-13.el9.noarch.rpm
-    repoid: rhel-9-for-s390x-baseos-rpms
-    size: 969726
-    checksum: sha256:345f2e3dfa04ccdb65b4c4c9df1900f298acc3bd78dddff66f338fb7e62ccb85
-    name: python3-setuptools
-    evr: 53.0.0-13.el9
-    sourcerpm: python-setuptools-53.0.0-13.el9.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/baseos/os/Packages/r/rsync-3.2.5-3.el9.s390x.rpm
     repoid: rhel-9-for-s390x-baseos-rpms
     size: 418877
@@ -614,13 +579,6 @@ arches:
     name: protobuf-compiler
     evr: 3.14.0-16.el9
     sourcerpm: protobuf-3.14.0-16.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/s390x/codeready-builder/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.s390x.rpm
-    repoid: codeready-builder-for-rhel-9-s390x-rpms
-    size: 218557
-    checksum: sha256:49545f2afd36b55ddf3d6adbe206fd1f5a021180d9153bccb0f4ea0ad7106c84
-    name: python3-ruamel-yaml
-    evr: 0.16.6-7.el9.1
-    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   source: []
   module_metadata: []
 - arch: x86_64
@@ -709,6 +667,13 @@ arches:
     name: python3-pip
     evr: 21.3.1-1.el9
     sourcerpm: python-pip-21.3.1-1.el9.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.x86_64.rpm
+    repoid: rhel-9-for-x86_64-appstream-rpms
+    size: 218621
+    checksum: sha256:edfa4be465a7ce774309cf67c85bd1a2f42fb9b5fe2508ccf681605c2ff21ee9
+    name: python3-ruamel-yaml
+    evr: 0.16.6-7.el9.1
+    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os/Packages/p/python3-ruamel-yaml-clib-0.2.7-3.el9.x86_64.rpm
     repoid: rhel-9-for-x86_64-appstream-rpms
     size: 151468
@@ -786,20 +751,6 @@ arches:
     name: python3
     evr: 3.9.21-2.el9
     sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/os/Packages/p/python3-libs-3.9.21-2.el9.x86_64.rpm
-    repoid: rhel-9-for-x86_64-baseos-rpms
-    size: 8477687
-    checksum: sha256:7d1a15f4540d24ce9e3c17fbfa9850e1ce87c41993b94931a85f1fcfda7eefdd
-    name: python3-libs
-    evr: 3.9.21-2.el9
-    sourcerpm: python3.9-3.9.21-2.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/os/Packages/p/python3-setuptools-53.0.0-13.el9.noarch.rpm
-    repoid: rhel-9-for-x86_64-baseos-rpms
-    size: 969726
-    checksum: sha256:345f2e3dfa04ccdb65b4c4c9df1900f298acc3bd78dddff66f338fb7e62ccb85
-    name: python3-setuptools
-    evr: 53.0.0-13.el9
-    sourcerpm: python-setuptools-53.0.0-13.el9.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/os/Packages/r/rsync-3.2.5-3.el9.x86_64.rpm
     repoid: rhel-9-for-x86_64-baseos-rpms
     size: 421930
@@ -828,12 +779,5 @@ arches:
     name: protobuf-compiler
     evr: 3.14.0-16.el9
     sourcerpm: protobuf-3.14.0-16.el9.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/codeready-builder/os/Packages/p/python3-ruamel-yaml-0.16.6-7.el9.1.x86_64.rpm
-    repoid: codeready-builder-for-rhel-9-x86_64-rpms
-    size: 218621
-    checksum: sha256:edfa4be465a7ce774309cf67c85bd1a2f42fb9b5fe2508ccf681605c2ff21ee9
-    name: python3-ruamel-yaml
-    evr: 0.16.6-7.el9.1
-    sourcerpm: python-ruamel-yaml-0.16.6-7.el9.1.src.rpm
   source: []
   module_metadata: []
