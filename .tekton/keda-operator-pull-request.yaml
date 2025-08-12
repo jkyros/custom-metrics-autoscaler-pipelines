@@ -162,6 +162,21 @@ spec:
       workspaces:
       - name: basic-auth
         workspace: git-auth
+    - name: read-versions
+      params:
+      - name: SOURCE_ARTIFACT
+        value: $(tasks.clone-repository.results.SOURCE_ARTIFACT)
+      - name: VERSION_FILE
+        value: "VERSIONS"
+      runAfter:
+      - clone-repository
+      taskRef:
+        name: read-versions-from-pipeline-repo
+      when:
+      - input: $(tasks.init.results.build)
+        operator: in
+        values:
+        - 'true'
     - name: prefetch-dependencies
       params:
       - name: input
@@ -213,6 +228,8 @@ spec:
         value: $(tasks.clone-repository.results.commit)
       - name: BUILD_ARGS
         value:
+        - CMA_VERSION=$(tasks.read-version-files.results.CMA_VERSION)
+        - OPENSHIFT_VERSION=$(tasks.read-version-files.results.OPENSHIFT_VERSION)
         - $(params.build-args[*])
       - name: BUILD_ARGS_FILE
         value: $(params.build-args-file)

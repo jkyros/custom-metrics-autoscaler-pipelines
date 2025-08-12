@@ -1,0 +1,7 @@
+# Custom Metrics Autoscaler Version Information
+# This file contains all version information for the CMA build
+# Update this file to change versions across all components
+
+CMA_VERSION=2.17.2
+OPENSHIFT_VERSION=4.20
+RELEASE_NUM=1

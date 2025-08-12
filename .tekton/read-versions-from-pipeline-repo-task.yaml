@@ -1,0 +1,79 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: read-versions-from-pipeline-repo
+  labels:
+    app.kubernetes.io/version: "0.1"
+spec:
+  description: >-
+    This task sources the VERSIONS file from the repository and outputs the
+    variables as task results for use as build arguments.
+  params:
+    - name: SOURCE_ARTIFACT
+      description: The Trusted Artifact URI pointing to the application source code
+      type: string
+    - name: VERSION_FILE
+      description: Version file to source (default: VERSIONS)
+      type: string
+      default: "VERSIONS"
+  results:
+    - name: CMA_VERSION
+      description: The CMA version
+    - name: OPENSHIFT_VERSION
+      description: The OpenShift version
+    - name: RELEASE_NUM
+      description: The release number
+  steps:
+    - name: use-trusted-artifact
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:4e39fb063f1bd7c33b1de5b6a78e6a4e0cf066e4ee5f42de59a98e0f5d18bb1c
+      args:
+        - use
+        - $(params.SOURCE_ARTIFACT)=/workspace/source
+    - name: read-versions
+      image: registry.redhat.io/ubi9/ubi-minimal:latest
+      workingDir: /workspace/source
+      script: |
+        #!/bin/bash
+        set -euo pipefail
+
+        VERSION_FILE="$(params.VERSION_FILE)"
+
+        echo "Reading versions from: $VERSION_FILE"
+
+        # Check if version file exists
+        if [[ ! -f "$VERSION_FILE" ]]; then
+          echo "ERROR: Version file '$VERSION_FILE' not found!"
+          exit 1
+        fi
+
+        echo "Contents of $VERSION_FILE:"
+        cat "$VERSION_FILE"
+        echo "---"
+
+        # Source the version file to load variables into environment
+        set -a  # automatically export all variables
+        source "$VERSION_FILE"
+        set +a  # turn off auto-export
+
+        # Validate required variables
+        if [[ -z "${CMA_VERSION:-}" ]]; then
+          echo "ERROR: CMA_VERSION not found in $VERSION_FILE"
+          exit 1
+        fi
+
+        # Set defaults for optional variables
+        OPENSHIFT_VERSION="${OPENSHIFT_VERSION:-}"
+        RELEASE_NUM="${RELEASE_NUM:-$CMA_VERSION}"
+
+        # Output the values
+        echo "Final values:"
+        echo "  CMA_VERSION: $CMA_VERSION"
+        echo "  OPENSHIFT_VERSION: $OPENSHIFT_VERSION"
+        echo "  RELEASE_NUM: $RELEASE_NUM"
+
+        # Write to result paths
+        echo -n "$CMA_VERSION" > $(results.CMA_VERSION.path)
+        echo -n "$OPENSHIFT_VERSION" > $(results.OPENSHIFT_VERSION.path)
+        echo -n "$RELEASE_NUM" > $(results.RELEASE_NUM.path)
+
+        echo "Version reading completed successfully"
