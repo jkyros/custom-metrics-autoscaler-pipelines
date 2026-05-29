@@ -89,7 +89,7 @@ spec:
     - default: "true"
       description: Use the package registry proxy when prefetching dependencies
       name: enable-package-registry-proxy
-    - default: .
+    - default: custom-metrics-autoscaler-operator/must-gather
       description: Target directories in component's source code to scan with SAST
         tools. Multiple values should be separated with commas.
       name: sast-target-dirs

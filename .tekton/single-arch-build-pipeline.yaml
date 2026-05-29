@@ -351,7 +351,7 @@ spec:
     description: The format for the resulting image's mediaType. Valid values are oci or docker.
   - name: sast-target-dirs
     type: string
-    default: .
+    default: custom-metrics-autoscaler-operator/must-gather
     description: Target directories to scan with SAST tools. Multiple values should be separated with commas.
   - name: enable-package-registry-proxy
     default: 'true'
